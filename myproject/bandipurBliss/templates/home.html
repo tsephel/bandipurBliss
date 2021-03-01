@@ -1,0 +1,437 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h3>Welcome to <strong>Bandipur Bliss</strong></h3>
+      <h1>A Recreational Getaway</h1>
+      <h2>Enjoy a luxuary experience at just the right price</h2>
+      <a href="#book" class="btn-get-started scrollto">Book Now</a>
+    </div>
+  </section><!-- End Hero -->
+
+   <main id="main">
+
+     <!-- ======= Booking Section ======= -->
+
+     <div class="booking-form" id="book">
+
+         <div class="col-12 text-center section-title-book pt-5">
+            <h2> Reservation </h2>
+              <h3 class="mb-4">Book Your <span>Room</span></h3>
+          </div>
+
+              <form method="post"> {% csrf_token %}
+                
+
+               <div class="row">
+                  <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                      <span class="form-label">Name</span>
+                      <input type="text" name="name" class="form-control" placeholder="Enter your Name" required id="id_name" />
+                    </div>
+                </div>
+
+                  <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                      <span class="form-label">No of people</span>
+                      <input type="number" name="number_people" class="form-control" step="1">
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                      <span class="form-label">Contact</span>
+                      <input type="text" name="contact" class="form-control" placeholder="Your Phone Number" required id="id_contact" />
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                  <span class="form-label">Email</span>
+                  <input type="text" name="email" class="form-control" placeholder="Your Email" required id="id_emai" />
+                </div>
+                </div>
+
+              </div>
+
+
+               <div class="row">
+                 
+
+                <div class="col-lg-3 col-md-12">
+                   <div class="form-group">
+                      <span class="form-label">Rooms</span>
+                          <select name="room_category" class="form-control" id="id_room_category">
+                                <option value="BASIC">BASIC</option>
+                                 <option value="DELUX">DELUX</option>
+                                  <option value="PREMINUM">PREMINUM</option>
+                            </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                </div>
+
+                  <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                      <span class="form-label">Check In</span>
+                      <input type="date" class="form-control" name="check_in" required id="id_check_in">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-12">
+                    <div class="form-group">
+                      <span class="form-label">Check out</span>
+                      <input type="date" class="form-control" name="check_out" required id="id_check_out">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-12 form-btn pt-4 text-center">
+                   
+                  <button class="submit-btn" type="submit">Book Now</button>
+
+            
+                </div>
+
+              </div>
+           
+              
+              </form>
+            </div>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+      
+          <div class="col-lg-5 pt-4 pt-lg-0">
+
+            <div class="section-title1 mb-5">
+              <h2>About</h2>
+              <h3>Learn More <span>About Us</span></h3>
+            </div>
+
+            <p>
+             <p>Come stay with us at <strong>Bandipur Bliss</strong> and make friends from everywhere.</p>
+              Perched on a high hillside overlooking the doorway into the former trading town of Bandipur, Himalayan Hideaway provides a unique tented retreat. Nine private, two-bed tents unite the luxury of protection from the elements and an intimate experience with the purity of a picturesque scene where time has stood still.
+            </p>
+            <a href="#book" class="btn-learn-more">Book Now</a>
+          </div>
+
+          <div class="col-lg-7 pt-4 pt-lg-0">
+
+            <div class="row">
+              
+              <div class="col-lg-6">
+                 <img src="{% static 'img/service.jpg' %}" class="img-fluid" alt="">
+              </div>
+
+                <div class="col-lg-6">
+                 <img src="{% static 'img/hero1.jpg' %}" class="img-fluid remove" alt="">
+              </div>
+
+            </div>
+           
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <h3>We do offer awesome <span>Services</span></h3>
+   
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'img/service/wifi.png' %}" class="img-fluid" alt="wifi"></div>
+              <h4 class="title"><a href="">Free WIFI</a></h4>
+              <p class="description">Always stay connected</p>              
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'img/service/information-desk.png' %}" class="img-fluid" alt="wifi"></div>
+              <h4 class="title"><a href="">24/7 Reception</a></h4>
+              <p class="description">Always at your service</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'img/service/bed.png' %}" class="img-fluid" alt="wifi"></div>
+              <h4 class="title"><a href="">Beds</a></h4>
+              <p class="description">Cozy and Relax</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'img/service/cutlery.png' %}" class="img-fluid" alt="wifi"></div>
+              <h4 class="title"><a href="">Cozy and Relax</a></h4>
+              <p class="description">Neat and Clean</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+          <div class="section-title">
+          <h2>WHY CHOOSE US</h2>
+          <h3>Contact us now to get the latest deals and for the next booking</h3>
+          <a class="cta-btn mt-5" href="#">Call To Action</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+    <!-- ======= Room Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Rooms</h2>
+          <h3>Check our <span>Suits & Residences</span></h3>
+        </div>
+
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'img/basic.jpg' %}" class="img-fluid" alt="basic-room">
+            <div class="portfolio-info">
+              <h4>Basic Room</h4>
+              <p>Rs.1500</p>
+              <a href="#book" class="preview-link"><i class="fa fa-bed"></i></a>
+             
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'img/delux.jpg' %}" class="img-fluid" alt="delux-room">
+            <div class="portfolio-info">
+              <h4>Delux Room</h4>
+              <p>Rs.2500</p>
+              <a href="#book" class="preview-link"><i class="fa fa-bed"></i></a>
+             
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'img/premium.jpg' %}" class="img-fluid" alt="premium-room">
+            <div class="portfolio-info">
+              <h4>Preminum Room</h4>
+              <p>Rs.20,000</p>
+              <a href="#book" class="preview-link"><i class="fa fa-bed"></i></a>
+         
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Room Section -->
+
+
+    <!-- ======= Testinomial Section ======= -->
+    <div class="container">
+
+      <div class="section-title">
+          <h2>Testimonials</h2>
+          <h3> What<span> Client </span>Says</h3>
+      </div>
+
+    <div id="comments" class="carousel slide" data-ride="carousel" data-interval="3000">
+       <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <p>I was there with my 2 friends, rooms was big and outside of hotel was really beautiful and it has two building,we stayed at old one, down one has tent also, any way , top of there suite room was beautiful but little dark, manger was great man friendly, he even had explained that he is going to renew. </p> <img src="https://i.imgur.com/lE89Aey.jpg">
+                    <div id="image-caption">Rafiel</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <p>This hotel was great! Location was good, beautiful views and close to town. Free wifi and hot water. The hotel worker Prem was very nice and friendly, looked after us and became a real friend during our week long stay! Definitely recommend this place if you are going to Bandipur.</p> <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
+                    <div id="image-caption">AmandaN85</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    <p>From Kathmandu if you plan to take a road trip to Pokhara - just break your journey at Bandipur. 2 nights - 3 days trip is reasonal trip. Himalayan Hideaway is great place to go and chill out - tented accomodation - good dining area - nice clean toilet with hot water shower facility.</p> <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+                    <div id="image-caption">Mukunda M</div>
+                </div>
+            </div>
+        </div> <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a> -->
+    </div>
+</div>
+
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <h3>View Our <span>Gallery</span></h3>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            
+              <div class="gallery-img">
+                <img src="{% static 'img/blog3.jpg' %}" class="img-fluid" alt="">
+                
+              </div>
+           
+          </div>
+
+           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            
+              <div class="gallery-img">
+                <img src="{% static 'img/blog2.jpg' %}" class="img-fluid" alt="">
+                
+              </div>
+           
+          </div>
+
+           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            
+              <div class="gallery-img">
+                <img src="{% static 'img/blog6.jpg' %}" class="img-fluid" alt="">
+                
+              </div>
+           
+          </div>
+
+           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            
+              <div class="gallery-img">
+                <img src="{% static 'img/blog5.jpg' %}" class="img-fluid" alt="">
+                
+              </div>
+           
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3>Contact <span>Us</span></h3>
+        </div>
+
+        <div>
+<!-- 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.7546988059576!2d84.40390981476551!3d27.94016438269606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399504f0768a03df%3A0xe14626644f4f0b4c!2sTundikhel%20Rd%2C%20Bandipur%2033904!5e0!3m2!1sen!2snp!4v1608098797471!5m2!1sen!2snp" style="border:0; width: 100%; height: 270px;" frameborder="0" allowfullscreen></iframe> -->
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Tudikhel, Bandipur -4 Tanahun, Nepal</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>hideawayhimalayan@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>Mobile: +977-9801018434</p>
+                <p>Tel: +977-16924153</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+      <!--       <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form> -->
+
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.7546988059576!2d84.40390981476551!3d27.94016438269606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399504f0768a03df%3A0xe14626644f4f0b4c!2sTundikhel%20Rd%2C%20Bandipur%2033904!5e0!3m2!1sen!2snp!4v1608098797471!5m2!1sen!2snp" style="border:0; width: 100%; height: 270px;" frameborder="0" allowfullscreen></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock %}
+
+
